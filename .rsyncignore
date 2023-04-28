@@ -1,0 +1,12 @@
+.git/
+.github/
+.env
+.phpunit.result.cache
+.htaccess
+node_modules/
+public/php.ini
+public/.user.ini
+storage/app/
+storage/framework/
+storage/logs/
+tests/
