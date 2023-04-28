@@ -19,7 +19,7 @@ return new class extends Migration
                 table: 'users'
             );
             $table->foreignId('chat_id')->constrainer()->cascadeOnDelete();
-            $table->longText('content');
+            $table->string('content', 4096);
             $table->dateTime('send_date');
         });
     }
