@@ -10,3 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\MainController;
+
+Route::get('', [MainController::class, 'index'])->name('index');
+Route::post('login', [MainController::class, 'login'])->name('login');
+Route::get('chats', [MainController::class, 'chats'])->name('chats');
+Route::post('send', [MainController::class, 'send'])->name('send');
+Route::get('logout', function () {
+    Auth::logout();
+
+    return redirect()->route('index');
+});
