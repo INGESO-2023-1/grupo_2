@@ -18,7 +18,7 @@ Sentry.init({
   environment: process.env.SENTRY_ENVIRONMENT,
   integrations: [
     new Integrations.BrowserTracing(),
-  ],question
+  ],
   sampleRate: process.env.SENTRY_SAMPLE_RATE || false,
   tracesSampleRate: process.env.SENTRY_TRACES_SAMPLE_RATE || false,
 });
