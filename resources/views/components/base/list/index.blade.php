@@ -4,16 +4,16 @@
   @param boolean $divide If true, the list will have a divider between each item.
 
   For example:
-  <x-student.card.card>
-    <x-student.card.list>
-      <x-student.card.list-item>
+  <x-base.card.card>
+    <x-base.list>
+      <x-base.list-item>
         A
-      </x-student.card.list-item>
-      <x-student.card.list-item>
+      </x-base.list-item>
+      <x-base.list-item>
         B
-      </x-student.card.list-item>
-    </x-student.card.list>
-  </x-student.card.card>
+      </x-base.list-item>
+    </x-base.list>
+  </x-base.card.card>
 --}}
 
 @props([

@@ -24,7 +24,7 @@
 
 <div
   {{ $attributes->merge([
-    'class' => "rounded {$padding} flex flex-col gap-5
+    'class' => "rounded-lg {$padding} flex flex-col gap-5
                 {$color}
                 {$darkColor}"
   ]) }}
@@ -51,8 +51,12 @@
     </i>
   @endif
   @if ($footer)
-    <div class="text-black text-opacity-60 dark:text-white dark:text-opacity-60 my-1">
+    @if (!is_string($footer) && $footer->attributes->get('empty', false))
       {{ $footer }}
-    </div>
+    @else
+      <div class="text-black text-opacity-60 dark:text-white dark:text-opacity-60 py-1">
+        {{ $footer }}
+      </div>
+    @endif
   @endif
 </div>

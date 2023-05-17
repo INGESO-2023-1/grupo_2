@@ -1,7 +1,7 @@
 @props([
   'action',
   'method',
-  'id',
+  'id' => 'form',
   'body'
 ])
 

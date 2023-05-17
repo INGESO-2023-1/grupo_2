@@ -17,7 +17,7 @@
       </h3>
     @endif
   </div>
-  <div class="ml-auto flex flex-row gap-2">
+  <div class="ml-auto flex flex-row gap-3 items-center">
     {{ $actions }}
   </div>
 </div>

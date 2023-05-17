@@ -3,11 +3,11 @@
   'href',
   'method' => false,
   'form' => false,
-  'body' => 'button',
+  'body' => $slot ?? 'button',
 
   'padding' => 'p-3',
-  'color' => 'bg-gray-300 text-black',
-  'darkColor' => 'dark:bg-gray-300 dark:text-black',
+  'color' => 'bg-indigo-800 bg-opacity-100 text-white text-opacity-90',
+  'darkColor' => 'dark:bg-indigo-800 dark:bg-opacity-100 dark:text-white dark:text-opacity-90',
   'icon' => false,
 ])
 
@@ -18,7 +18,7 @@
   </form>
   <button type="submit" form="form-{{ $method }}"
     {{ $attributes->merge([
-        'class' => "{$padding} {$color} {$darkColor} rounded flex items-center gap-1"
+        'class' => "{$padding} {$color} {$darkColor} rounded-lg flex items-center gap-1"
     ]) }}
   >
     @if ($icon)
@@ -31,7 +31,7 @@
 @elseif($type == 'a')
   <a href="{{ $href }}"
     {{ $attributes->merge([
-      'class' => "{$padding} {$color} {$darkColor} rounded flex items-center gap-1"
+      'class' => "{$padding} {$color} {$darkColor} rounded-lg flex items-center gap-1"
     ]) }}
   >
     @if ($icon)
@@ -44,7 +44,7 @@
 @elseif($type == 'submit')
   <button type="submit" form="{{ $form }}"
     {{ $attributes->merge([
-      'class' => "{$padding} {$color} {$darkColor} rounded flex items-center gap-1"
+      'class' => "{$padding} {$color} {$darkColor} rounded-lg flex items-center gap-1"
     ]) }}
   >
     @if ($icon)
