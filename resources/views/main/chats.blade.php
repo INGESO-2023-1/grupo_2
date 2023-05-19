@@ -12,7 +12,7 @@
       >
         <x-base.form.list>
           <x-base.form.list.item input="text" attribute="username" required />
-          <x-base.form.list.item input="text" attribute="content" required />
+          <x-base.form.list.item input="text" attribute="contenido" required />
         </x-base.form.list>
         <x-base.action type="submit" body="Enviar" form="form-send"/>
       </x-base.form>
@@ -23,9 +23,9 @@
       <x-base.list>
         @for ($i = 0; $i<5; $i+=1)
           <x-base.list.item class="grid grid-cols-12 gap-8">
-            <div class="col-span-2"> <div class="h-6 w-full bg-gray-700 rounded"></div></div>
-            <div class="col-span-9"><div class="h-6 w-full bg-gray-700 rounded"></div></div>
-            <div class="col-span-1"><div class="h-6 w-full bg-gray-700 rounded"></div></div>
+            <div class="col-span-2"> <div class="h-6 w-full bg-gray-300 rounded"></div></div>
+            <div class="col-span-9"><div class="h-6 w-full bg-gray-300 rounded"></div></div>
+            <div class="col-span-1"><div class="h-6 w-full bg-gray-300 rounded"></div></div>
           </x-base.list.item>
         @endfor
       </x-base.list>
