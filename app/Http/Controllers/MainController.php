@@ -11,8 +11,12 @@ use Illuminate\View\View;
 
 class MainController extends Controller
 {
-    public function index(): View
+    public function index(): View|RedirectResponse
     {
+        if (Auth::check()) {
+            return redirect()->route('chats');
+        }
+
         return view('main.index');
     }
 
@@ -27,8 +31,12 @@ class MainController extends Controller
         return redirect()->route('chats');
     }
 
-    public function chats(): View
+    public function chats(): View|RedirectResponse
     {
+        if (!Auth::check()) {
+            return redirect()->route('index');
+        }
+
         $chats = Auth::user()->getChats();
 
         return view('main.chats', [
@@ -39,6 +47,10 @@ class MainController extends Controller
 
     public function send(Request $request): RedirectResponse
     {
+        if (!Auth::check()) {
+            return redirect()->route('index');
+        }
+
         $user = Auth::user();
         $receiver = User::whereUsername($request->receiver_username)->first();
 
