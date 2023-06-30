@@ -15,15 +15,18 @@
           <x-base.form.list>
             <x-base.form.list.item
               input="text"
-              attribute="receiver_username"
+              attribute="Usuario"
+              name="receiver_username"
               required
             />
             <x-base.form.list.item
               input="text"
-              attribute="content"
+              attribute="Contenido"
+              name="content"
               required
             />
           </x-base.form.list>
+          <div class="mt-3"></div>
           <x-base.action
             type="submit"
             body="Enviar"
@@ -35,25 +38,29 @@
     <div class="col-span-12">
       <x-base.card header="Chats">
         <x-base.list>
-          @foreach ($chats as $chat)
-            <x-base.list.item class="grid grid-cols-12 gap-8">
-              <div class="col-span-2">
-                <div class="h-6 w-full rounded">
-                  {{ $chat->getOtherUser($user)->username }}
+          @forelse ($chats as $chat)
+            <a href="{{ route('chat', $chat) }}">
+              <x-base.list.item class="grid grid-cols-12 gap-8">
+                <div class="col-span-2">
+                  <div class="h-6 w-full rounded">
+                    {{ $chat->getOtherUser($user)->username }}
+                  </div>
                 </div>
-              </div>
-              <div class="col-span-9">
-                <div class="h-6 w-full rounded">
-                  {{ $chat->messages()->latest()->first()->content }}
+                <div class="col-span-9">
+                  <div class="h-6 w-full rounded">
+                    {{ $chat->messages()->latest()->first()->content }}
+                  </div>
                 </div>
-              </div>
-              <div class="col-span-1">
-                <div class="h-6 w-full rounded">
-                  {{ $chat->messages()->count() }}
+                <div class="col-span-1">
+                  <div class="h-6 w-full rounded">
+                    {{ $chat->messages()->count() }}
+                  </div>
                 </div>
-              </div>
-            </x-base.list.item>
-          @endforeach
+              </x-base.list.item>
+            </a>
+          @empty
+            No hay chats
+          @endforelse
         </x-base.list>
       </x-base.card>
     </div>

@@ -1,1 +1,1 @@
-<x-base.layout.navbar :login="false" />
+<x-base.layout.navbar :login="true" />
