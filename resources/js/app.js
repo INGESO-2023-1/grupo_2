@@ -10,6 +10,8 @@ import { Integrations } from '@sentry/tracing';
 import i18n from './locales';
 import pinia from './stores';
 
+import VChats from './components/chats.vue';
+
 const app = createApp();
 
 Sentry.init({
@@ -29,5 +31,7 @@ app.use(pinia);
 app.config.globalProperties.$filters = {
   camelizeKeys,
 };
+
+app.component('VChats', VChats);
 
 app.mount('#app');
